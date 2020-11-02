@@ -47,7 +47,8 @@ const DEIFNE_KIND = [
 
 ]
 
-const NoticeList = () => {
+const NoticeList = ({history}) => {
+  console.log(history)
 
   //list State
   const [list, setList] = useState(NoticeLists);
@@ -59,19 +60,35 @@ const NoticeList = () => {
     return kinds.map((kind, index) => <button key={index}>{kind.text}</button>)
   }, [kinds]);
 
+  const goToLogin = useCallback(() => {
+    history.push('/login');
+  }, [history]);
+
+  const goToJoin = useCallback(() => {
+    history.push('/Join');
+  },[history])
+
+  const handleNewClick = useCallback(() => {
+    history.push('/newNotice');
+  },[history])
+
+  const handleRowClock = useCallback(() => {
+    history.push('/noticeDetail');
+  },[history])
+
   return (
     <>
       <h1>지역 맛집 게시판</h1>
       <div>
-        <button>로그인</button>
-        <button>회원가입</button>
+        <button onClick={goToLogin}>로그인</button>
+        <button onClick={goToJoin}>회원가입</button>
       </div>
       {kindLists()}
       <span>
         <input type="text" placeholder='Title'/><FaSearch/>
       </span>
       <span>
-        <button><IoIosAddCircle/>Create</button>
+        <button onClick={handleNewClick}><IoIosAddCircle/>Create</button>
       </span>
       <NoticeListItem dataList={list} kindList={DEIFNE_KIND}/>
       {/*pageNation*/}

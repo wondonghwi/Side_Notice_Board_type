@@ -1,6 +1,14 @@
 import React, { useCallback } from 'react';
+import '../../scss/styles.scss';
 
-const NoticeListItem = ({dataList}) => {
+const NoticeListItem = ({dataList, onRowClick}) => {
+
+  //Row를 클릭했을때 name을 넘겨주는 함수
+  const handleRowClick = useCallback((Title) => {
+    if (onRowClick) {
+      onRowClick(Title)
+    }
+  }, [onRowClick]);
 
   //NoticeList의 list
   const NoticeLists = useCallback(() => {
@@ -16,7 +24,9 @@ const NoticeListItem = ({dataList}) => {
       } = list;
 
       return (
-        <tr key={index}>
+        <tr key={index} onClick={() => handleRowClick(Title)}
+            className='cursor-pointer'
+        >
           <td>{No}</td>
           <td>{Title}</td>
           <td>{Kind}</td>
@@ -26,11 +36,11 @@ const NoticeListItem = ({dataList}) => {
         </tr>
       )
     })
-  }, [dataList]);
+  }, [dataList, handleRowClick]);
 
   return (
     <>
-      <table className='table table-bordered'>
+      <table className='table table-bordered table-hover'>
         <thead>
         <tr>
           <th scope='col'>No</th>

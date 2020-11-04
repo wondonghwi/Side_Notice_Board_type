@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import NoticeListItem from "./NoticeListItem";
 import { FaSearch, IoIosAddCircle } from 'react-icons/all';
+import { MODE } from "../../common/CommonConst";
 
 // list 더미데이터 작성
 const NoticeLists = [
@@ -19,6 +20,14 @@ const NoticeLists = [
     Revisit: 'false',
     Writer: 'chul',
     CreateDate: '2020-10-27',
+  },
+  {
+    No: 3,
+    Title: '떡마왕',
+    Kind: '분식',
+    Revisit: 'true',
+    Writer: 'won',
+    CreateDate: '2020-11-04',
   },
 ];
 
@@ -48,7 +57,6 @@ const DEIFNE_KIND = [
 ]
 
 const NoticeList = ({history}) => {
-  console.log(history)
 
   //list State
   const [list, setList] = useState(NoticeLists);
@@ -66,15 +74,24 @@ const NoticeList = ({history}) => {
 
   const goToJoin = useCallback(() => {
     history.push('/Join');
-  },[history])
+  }, [history])
 
   const handleNewClick = useCallback(() => {
     history.push('/newNotice');
-  },[history])
+  }, [history])
 
-  const handleRowClock = useCallback(() => {
-    history.push('/noticeDetail');
-  },[history])
+  const handleRowClock = useCallback((Titie) => {
+
+    //New 모드
+    const params = {
+      pathname: '/noticeDetail',
+      state: {
+        mode: MODE.EDIT,
+        title: Titie,
+      }
+    };
+    history.push(params);
+  }, [history]);
 
   return (
     <>
@@ -90,7 +107,10 @@ const NoticeList = ({history}) => {
       <span>
         <button onClick={handleNewClick}><IoIosAddCircle/>Create</button>
       </span>
-      <NoticeListItem dataList={list} kindList={DEIFNE_KIND}/>
+      <NoticeListItem dataList={list}
+                      kindList={DEIFNE_KIND}
+                      onRowClick={handleRowClock}
+      />
       {/*pageNation*/}
       <nav aria-label="Page navigation example">
         <ul className="pagination">

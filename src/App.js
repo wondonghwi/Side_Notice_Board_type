@@ -6,15 +6,6 @@ import NewNotice from "./components/notice/NewNotice";
 import Login from "./components/auth/Login";
 import Join from "./components/auth/Join";
 
-
-//todo react-router 세팅하기
-
-//NoticeList
-//NoticeDetail
-//NoticeNew
-//회원가입
-//로그인
-
 const App = () => {
   return (
     <>

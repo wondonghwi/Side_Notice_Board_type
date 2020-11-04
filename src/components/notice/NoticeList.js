@@ -82,7 +82,7 @@ const NoticeList = ({history}) => {
 
   const handleRowClock = useCallback((Titie) => {
 
-    //New 모드
+    //Detail 모드
     const params = {
       pathname: '/noticeDetail',
       state: {

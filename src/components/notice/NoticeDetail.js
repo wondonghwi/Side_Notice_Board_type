@@ -20,7 +20,7 @@ const NoticeDetail = ({location}) => {
       </div>
       <div className="row">
         <div className="col-4">
-          Title
+          Title :
         </div>
         <div className="col-8 ">
           <input type="text" className='w-50'/>
@@ -29,7 +29,7 @@ const NoticeDetail = ({location}) => {
 
       <div className="row">
         <div className="col-4">
-          Kind
+          Kind :
         </div>
         <div className="col-8 ">
           <select className='w-25'/>
@@ -38,7 +38,7 @@ const NoticeDetail = ({location}) => {
 
       <div className="row">
         <div className="col-4">
-          Contents
+          Contents :
         </div>
         <div className="col-8 ">
           <textarea className='w-50'/>
@@ -47,7 +47,7 @@ const NoticeDetail = ({location}) => {
 
       <div className="row">
         <div className="col-4">
-          Revisit
+          Revisit :
         </div>
         <div className="col-8 ">
           <select className='w-25'/>
@@ -56,7 +56,7 @@ const NoticeDetail = ({location}) => {
 
       <div className="row">
         <div className="col-4">
-          Writer
+          Writer :
         </div>
         <div className="col-8 ">
           <input className='w-50' readOnly/>
@@ -65,7 +65,7 @@ const NoticeDetail = ({location}) => {
 
       <div className="row">
         <div className="col-4">
-          Create Datae
+          Create Date :
         </div>
         <div className="col-8 ">
           <input className='w-50' readOnly/>

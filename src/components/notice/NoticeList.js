@@ -77,12 +77,21 @@ const NoticeList = ({history}) => {
   }, [history])
 
   const handleNewClick = useCallback(() => {
-    history.push('/newNotice');
+
+    //생성 모드
+    const params = {
+      pathname: '/newNotice',
+      state: {
+        mode: MODE.NEW,
+      }
+    };
+
+    history.push(params);
   }, [history])
 
   const handleRowClock = useCallback((Titie) => {
 
-    //Detail 모드
+    //수정 모드
     const params = {
       pathname: '/noticeDetail',
       state: {
@@ -90,6 +99,7 @@ const NoticeList = ({history}) => {
         title: Titie,
       }
     };
+
     history.push(params);
   }, [history]);
 
@@ -111,6 +121,7 @@ const NoticeList = ({history}) => {
                       kindList={DEIFNE_KIND}
                       onRowClick={handleRowClock}
       />
+
       {/*pageNation*/}
       <nav aria-label="Page navigation example">
         <ul className="pagination">
@@ -125,4 +136,4 @@ const NoticeList = ({history}) => {
   );
 };
 
-export default NoticeList;
+export default React.memo(NoticeList);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MODE } from "../../common/CommonConst";
 
 const NoticeDetail = ({location}) => {
 
@@ -7,11 +8,6 @@ const NoticeDetail = ({location}) => {
 
   console.log(mode)
   console.log(title)
-
-  // const locationState = {
-  //   mode: location.state.mode,
-  //   title: location.state.title,
-  // }
 
   return (
     <>
@@ -54,25 +50,31 @@ const NoticeDetail = ({location}) => {
         </div>
       </div>
 
-      <div className="row">
-        <div className="col-4">
-          Writer :
+      {/*mode가 Edit일때만 보이도록 설정*/}
+      {mode === MODE.EDIT && (
+        <div className="row">
+          <div className="col-4">
+            Writer :
+          </div>
+          <div className="col-8 ">
+            <input className='w-50' readOnly/>
+          </div>
         </div>
-        <div className="col-8 ">
-          <input className='w-50' readOnly/>
-        </div>
-      </div>
+      )}
 
-      <div className="row">
-        <div className="col-4">
-          Create Date :
+      {/*mode가 Edit일때만 보이도록 설정*/}
+      {mode === MODE.EDIT && (
+        <div className="row">
+          <div className="col-4">
+            Create Date :
+          </div>
+          <div className="col-8 ">
+            <input className='w-50' readOnly/>
+          </div>
         </div>
-        <div className="col-8 ">
-          <input className='w-50' readOnly/>
-        </div>
-      </div>
+      )}
     </>
   );
 };
 
-export default NoticeDetail;
+export default React.memo(NoticeDetail);

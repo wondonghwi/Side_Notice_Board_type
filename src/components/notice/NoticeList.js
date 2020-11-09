@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import NoticeListItem from "./NoticeListItem";
-import { FaSearch, IoIosAddCircle } from 'react-icons/all';
+import { IoIosAddCircle } from 'react-icons/all';
 import { MODE } from "../../common/CommonConst";
+import TextSearch from "./TextSearch";
 
 // list 더미데이터 작성
 const NoticeLists = [
@@ -64,6 +65,9 @@ const NoticeList = ({history}) => {
   //kinds State
   const [kinds, setKinds] = useState(DEIFNE_KIND)
 
+  //textSearch 검색을 위한 state
+  const [text, setText] = useState('');
+
   const kindLists = useCallback(() => {
     return kinds.map((kind, index) => <button key={index}>{kind.text}</button>)
   }, [kinds]);
@@ -111,9 +115,7 @@ const NoticeList = ({history}) => {
         <button onClick={goToJoin}>회원가입</button>
       </div>
       {kindLists()}
-      <span>
-        <input type="text" placeholder='Title'/><FaSearch/>
-      </span>
+      <TextSearch name='search' placeholder='Title 검색'/>
       <span>
         <button onClick={handleNewClick}><IoIosAddCircle/>Create</button>
       </span>
@@ -121,6 +123,8 @@ const NoticeList = ({history}) => {
                       kindList={DEIFNE_KIND}
                       onRowClick={handleRowClock}
       />
+
+      <hr/>
 
       {/*pageNation*/}
       <nav aria-label="Page navigation example">

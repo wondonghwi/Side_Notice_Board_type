@@ -1,6 +1,7 @@
 import React from 'react';
 import { MODE } from "../../common/CommonConst";
 
+//New 와 Edit mode로 나눠진 생성 , 수정 모드 컴포넌트
 const NoticeDetail = ({location}) => {
 
   const {mode} = location.state

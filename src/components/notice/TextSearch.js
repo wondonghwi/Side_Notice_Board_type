@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { MdSearch } from "react-icons/md";
 
+//검색 버튼을 눌렀을때 해당 name으로 검색하기 위한 컴포넌트
 const TextSearch = ({name, placeholder}) => {
 
   const [text, setText] = useState('');

@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import '../../scss/styles.scss';
 
+//게시판의 List를 map으로 뿌려주는 컴포넌트
 const NoticeListItem = ({dataList, onRowClick}) => {
 
   //Row를 클릭했을때 name을 넘겨주는 함수

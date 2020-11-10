@@ -57,6 +57,7 @@ const DEIFNE_KIND = [
 
 ]
 
+//게시판의 List를 나타내는 컴포넌트
 const NoticeList = ({history}) => {
 
   //list State
@@ -64,9 +65,6 @@ const NoticeList = ({history}) => {
 
   //kinds State
   const [kinds, setKinds] = useState(DEIFNE_KIND)
-
-  //textSearch 검색을 위한 state
-  const [text, setText] = useState('');
 
   const kindLists = useCallback(() => {
     return kinds.map((kind, index) => <button key={index}>{kind.text}</button>)

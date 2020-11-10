@@ -54,8 +54,9 @@ const DEIFNE_KIND = [
     text: '분식',
     value: '분식',
   },
+];
 
-]
+// Todo : Test github -> contributions
 
 //게시판의 List를 나타내는 컴포넌트
 const NoticeList = ({history}) => {

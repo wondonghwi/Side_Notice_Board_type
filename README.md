@@ -4,7 +4,7 @@
 
 기술스택 : react , Scss , react-router-dom , bootstrap
 
-현재 
+(현재 진행중)
 
 Front-End : 원동휘
 Back-End : 김희철

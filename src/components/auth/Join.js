@@ -36,11 +36,19 @@ const Join = () => {
       password: joinForm.password,
     };
 
-    // const sendString = JSON.stringify(sendObject);
-
+    try {
+      let res = await axios.post(`${LOCAL_URL}/api/v1/auth/sign-in/`, sendObject);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+    finally {
+      // loading
+    }
+    //백업주석
     //데이터 생성 요청
-    let res = await axios.post(`${LOCAL_URL}/api/v1/auth/sign-in/`, sendObject);
-    console.log(res);
+    // let res = await axios.post(`${LOCAL_URL}/api/v1/auth/sign-in/`, sendObject);
+    // console.log(res);
   };
 
   //input에서 change가 일어날때 발생할 함수

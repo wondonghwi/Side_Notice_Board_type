@@ -1,9 +1,12 @@
 import React from 'react';
-import NoticeList from "./components/notice/NoticeList";
 import { Route, Switch } from 'react-router-dom';
-import NoticeDetail from "./components/notice/NoticeDetail";
-import Login from "./components/auth/Login";
-import Join from "./components/auth/Join";
+import loadable from '@loadable/component';
+
+//코드스플리팅
+const NoticeList = loadable(() => import('./components/notice/NoticeList'));
+const NoticeDetail = loadable(() => import('./components/notice/NoticeDetail'));
+const Login = loadable(() => import('./components/auth/Login'));
+const Join = loadable(() => import('./components/auth/Join'));
 
 const App = () => {
   return (

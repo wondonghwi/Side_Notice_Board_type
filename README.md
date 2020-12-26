@@ -1,6 +1,6 @@
 <h1>사이드프로젝트</h1>
 
-(현재 진행중) 
+(현재 진행중) <br/>
 Scss -> StyleComponent로 변경 예정 <br/>
 js -> typeScript로 변경 예정 <br/>
 bootstrap -> 제거 예정 

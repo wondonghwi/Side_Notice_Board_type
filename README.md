@@ -1,9 +1,9 @@
 <h1>사이드프로젝트</h1>
 
 (현재 진행중) 
-Scss -> StyleComponent로 변경 예정
-js -> typeScript로 변경 예정
-bootstrap -> 제거 예정
+Scss -> StyleComponent로 변경 예정 <br/>
+js -> typeScript로 변경 예정 <br/>
+bootstrap -> 제거 예정 
 
 프로젝트명 : 맛집게시판
 
